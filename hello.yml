@@ -1,0 +1,23 @@
+name: Hello GitHub CI/CD
+
+# Trigger the workflow on push or pull request events
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest # Use the latest Ubuntu runner
+
+    steps:
+      # Step 1: Check out the code (optional for simple scripts)
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Print a message
+      - name: Say Hello
+        run: echo "Hello GitHub CI/CD!"
